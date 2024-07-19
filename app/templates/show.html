@@ -1,0 +1,9 @@
+{%extends 'base.html'%}
+{%block mainblock%}
+  {# qui mostriamo la card singola per ogni entità #}
+  <article>
+    <h1>{{item_name}}</h1>
+    <img style="width:100px;height:100px;" src="/static/default.jpg" alt="{{item_name}}"/>
+    <p>{{item_content}}</p>
+  </article>
+{%endblock%}

@@ -3,11 +3,6 @@ from flask import Flask, redirect, render_template, abort, request
 def start_app():
   app = Flask(__name__)
 
-  @app.route('/')
-  @app.route('/home')
-  def home():
-    return render_template('index.html', page_title='HOMEPAGE')
-
   @app.route('/login', methods=['GET','POST'])
   def login():
     if request.method == 'POST':
@@ -20,6 +15,12 @@ def start_app():
                 '''
 
     return render_template('login.html',  page_title='LOGIN')
+  
+  @app.route('/')
+  @app.route('/home')
+  def home():
+    return render_template('index.html', page_title='HOMEPAGE')
+
 
   @app.route('/strumenti')
   def strumenti():
@@ -32,12 +33,38 @@ def start_app():
   @app.route('/strumenti/chitarre')
   def chitarre():
     return render_template('chitarre.html', page_title='CHITARRE')
+  
   @app.route('/strumenti/batterie')
   def batterie():
     return render_template('batterie.html', page_title='BATTERIE')
+  
   @app.route('/strumenti/bassi')
   def bassi():
     return render_template('bassi.html', page_title='BASSI')
+  
+  @app.route('/strumenti/chitarre/<int:id>')
+  def chitarra(id):
+    item_name=f'chitarra numero: {id}'
+    item_content=f'la descrizione della chitarra {id}'
+    return render_template('show.html', page_title=f'Chitarra id {id}', item_name=item_name, item_content=item_content)
+  
+  @app.route('/strumenti/batterie/<int:id>')
+  def batteria(id):
+    item_name=f'batteria numero: {id}'
+    item_content=f'la descrizione della batteria {id}'
+    return render_template('show.html', page_title=f'Batteria', item_name=item_name, item_content=item_content)
+  
+  @app.route('/strumenti/bassi/<int:id>')
+  def basso(id):
+    item_name=f'basso numero: {id}'
+    item_content=f'la descrizione del basso {id}'
+    return render_template('show.html', page_title=f'Basso', item_name=item_name, item_content=item_content)
+  
+  @app.route('/concerti/<int:id>')
+  def concerto(id):
+    item_name=f'concerto numero: {id}'
+    item_content=f'la descrizione del concerto {id}'
+    return render_template('show.html', page_title=f'Concerto', item_name=item_name, item_content=item_content)
 
   ##############################
   return app

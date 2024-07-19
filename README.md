@@ -17,9 +17,9 @@ TODO
                '/home o / ' # lista strumenti e lista concerti
                '/strumenti' # lista strumenti 
                '/concerti' # lista concerti 
-               '/strumenti/chitarre' # lista chitarre 
-               '/strumenti/batterie' # lista batterie 
-               '/strumenti/bassi' # lista bassi 
+  '/strumenti/chitarre' # lista chitarre 
+  '/strumenti/batterie' # lista batterie 
+  '/strumenti/bassi' # lista bassi 
   
   'show.html' # estende base.html ma mostra solo uno strumento quindi il blocco sarà:
               '/concerti/<int:id>'  #blocco concerto
