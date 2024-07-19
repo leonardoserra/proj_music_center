@@ -26,7 +26,8 @@ TODO
               '/strumenti/chitarre/<int:id>'  #blocco della chitarra
               '/strumenti/batterie/<int:id>'  #blocco della batteria
               '/strumenti/bassi/<int:id>' #blocco del basso
-  
+  'login.html'# avrà il form per il login una volta loggato porta a '/home' ma da loggato.
+              '/login, methods=["GET", "POST"]'
 ``` 
 
 ```py
