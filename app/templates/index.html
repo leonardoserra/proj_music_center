@@ -1,0 +1,31 @@
+{%extends 'base.html'%}
+{%block mainblock%}
+<section>
+  <h1>Benvenuto!</h1>
+  <h2>pagina: {{page_title}}</h2>
+  {%block strumenti_list%}
+    <h2>STRUMENTI:</h2>
+    <ul>
+      <li>Strumento 1</li>
+      <li>Strumento 2</li>
+      <li>Strumento 3</li>
+      <li>Strumento 4</li>
+      <li>Strumento 5</li>
+      <li>Strumento 6</li>
+    </ul>
+  {%endblock%}
+
+  {%block concerti_list%}
+    <h2>CONCERTI:</h2>
+    <ul>
+      <li>Concerto 1</li>
+      <li>Concerto 2</li>
+      <li>Concerto 3</li>
+      <li>Concerto 4</li>
+      <li>Concerto 5</li>
+      <li>Concerto 6</li>
+    </ul>
+  {%endblock%}
+
+</section>
+{%endblock%}
