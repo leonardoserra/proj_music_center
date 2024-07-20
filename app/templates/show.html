@@ -1,9 +1,14 @@
 {%extends 'base.html'%}
 {%block mainblock%}
   {# qui mostriamo la card singola per ogni entità #}
-  <article>
-    <h1>{{item_name}}</h1>
-    <img style="width:100px;height:100px;" src="/static/default.jpg" alt="{{item_name}}"/>
-    <p>{{item_content}}</p>
+  <article class="center-content text-center">
+    <div class="card-show">
+      <h1 class="card-title mb-5">{{item_name}}</h1>
+      <div class="card-image-wrapper">
+        <img class="card-image" src="/static/default.jpg" alt="{{item_name}}"/>
+      </div>
+      <p class="card-price italic mb-3 mt-2">Prezzo: <span class="semibold">200.00€</span></p>
+      <p class="card-description">{{item_content}}</p>
+    </div>
   </article>
 {%endblock%}

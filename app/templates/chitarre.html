@@ -1,13 +1,17 @@
 {%extends 'base.html'%}
 {%block mainblock%}
   <h2>CHITARRE:</h2>
-  <ul>
-    <li><a href="/strumenti/chitarre/1">Chitarra 1</a></li>
-    <li><a href="/strumenti/chitarre/2">Chitarra 2</a></li>
-    <li><a href="/strumenti/chitarre/3">Chitarra 3</a></li>
-    <li><a href="/strumenti/chitarre/4">Chitarra 4</a></li>
-    <li><a href="/strumenti/chitarre/5">Chitarra 5</a></li>
-    <li><a href="/strumenti/chitarre/6">Chitarra 6</a></li>
-    <li><a href="/strumenti/chitarre/7">Chitarra 7</a></li>
+  <ul class="d-flex justify-between no-list-style">
+  {%for i in range(24)%}
+    <li class="card">
+      <a class="center-content" href="/strumenti/chitarre/{{i + 1}}">
+        <h3 class="card-title"> Chitarra {{i + 1}}</h3>
+        <div class="card-image-wrapper">
+          <img class="card-image" src="/static/default.jpg" alt="Chitarra {{i + 1}}">
+        </div>
+        <p class="card-price italic">Prezzo: <span class="semibold">200.00€</span></p>
+      </a>
+    </li>
+  {%endfor%}
   </ul>
 {%endblock%}

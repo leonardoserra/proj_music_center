@@ -5,23 +5,62 @@
   <h2>pagina: {{page_title}}</h2>
   {%block strumenti_list%}
     <h2>STRUMENTI:</h2>
-    <ul>
-      <li><a href="/strumenti/chitarre/1">Chitarra 1</a></li>
-      <li><a href="/strumenti/batterie/1">Batteria 1</a></li>
-      <li><a href="/strumenti/bassi/1">Basso 1</a></li>
-      <li><a href="/strumenti/chitarre/2">Chitarra 2</a></li>
-      <li><a href="/strumenti/batterie/3">Batteria 3</a></li>
+    <ul class="d-flex justify-between no-list-style">
+      {%for i in range(4)%}
+      <li class="card">
+        <a class="center-content" href="/strumenti/chitarre/{{i + 1}}">
+          <h3 class="card-title"> Chitarra {{i + 1}}</h3>
+          <div class="card-image-wrapper">
+            <img class="card-image" src="/static/default.jpg" alt="Chitarra {{i + 1}}">
+          </div>
+          <p class="card-price italic">Prezzo: <span class="semibold">200.00€</span></p>
+        </a>
+      </li>
+      {%endfor%}
+      {%for i in range(4)%}
+      <li class="card">
+        <a class="center-content" href="/strumenti/batterie/{{i + 1}}">
+          <h3 class="card-title"> Batteria  {{i + 1}}</h3>
+          <div class="card-image-wrapper">
+            <img class="card-image" src="/static/default.jpg" alt="Batteria {{i + 1}}">
+          </div>
+          <p class="card-price italic">Prezzo: <span class="semibold">200.00€</span></p>
+        </a>
+      </li>
+      {%endfor%}
+      {%for i in range(4)%}
+      <li class="card">
+        <a class="center-content" href="/strumenti/bassi/{{i + 1}}">
+          <h3 class="card-title"> Basso  {{i + 1}}</h3>
+          <div class="card-image-wrapper">
+            <img class="card-image" src="/static/default.jpg" alt="Basso {{i + 1}}">
+          </div>
+          <p class="card-price italic">Prezzo: <span class="semibold">200.00€</span></p>
+        </a>
+      </li>
+      {%endfor%}
+
+      
     </ul>
   {%endblock%}
 
   {%block concerti_list%}
     <h2>CONCERTI:</h2>
-    <ul>
-      <li><a href="/concerti/1">Concerto 1</a></li>
-      <li><a href="/concerti/2">Concerto 2</a></li>
-      <li><a href="/concerti/3">Concerto 3</a></li>
-      <li><a href="/concerti/4">Concerto 4</a></li>
-      <li><a href="/concerti/5">Concerto 5</a></li>
+
+    <ul class="d-flex justify-between no-list-style">
+      
+      {%for i in range(12)%}
+      <li class="card">
+        <a class="center-content" href="/concerti/{{i + 1}}">
+          <h3 class="card-title"> Concerto  {{i + 1}}</h3>
+          <div class="card-image-wrapper">
+            <img class="card-image" src="/static/default.jpg" alt="Concerto {{i + 1}}">
+          </div>
+          <p class="card-price italic">Prezzo: <span class="semibold">200.00€</span></p>
+        </a>
+      </li>
+      {%endfor%}
+      
     </ul>
   {%endblock%}
 
