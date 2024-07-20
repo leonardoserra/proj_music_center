@@ -1,9 +1,12 @@
 {%extends 'base.html'%}
 {%block mainblock%}
+  {#this macro generates an input tag#}
   {%macro input(name, value='', type='text', size=20) -%}
     <input placeholder="{{name}}" type="{{type}}" name="{{name}}", value="{{value|e}}" size="{{size}}">
   {%- endmacro%}
+
   <form action="/login" method="post">
+    
     {{input('username')}}
     {{input('password', type='password')}}
     <button type="submit">Accedi</button>

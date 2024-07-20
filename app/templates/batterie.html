@@ -1,7 +1,7 @@
 {%extends 'base.html'%}
 {%block mainblock%}
-  <h2>BATTERIE:</h2>
-  <ul class="d-flex justify-between no-list-style">
+  <h2 class="text-center">BATTERIE:</h2>
+  <ul class="d-flex justify-start no-list-style">
     {%for i in range(24)%}
       <li class="card">
         <a class="center-content" href="/strumenti/batterie/{{i + 1}}">

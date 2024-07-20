@@ -1,10 +1,11 @@
 {%extends 'base.html'%}
 {%block mainblock%}
-<section>
+<section class="mb-3">
   {%block strumenti_list%}
-    <h2>STRUMENTI:</h2>
-    <ul class="d-flex justify-between no-list-style">
-      {%for i in range(4)%}
+
+    <h2 class="text-center">STRUMENTI:</h2>
+    <ul class="d-flex justify-start no-list-style">
+      {%for i in range(7)%}
       <li class="card">
         <a class="center-content" href="/strumenti/chitarre/{{i + 1}}">
           <h3 class="card-title"> Chitarra {{i + 1}}</h3>
@@ -15,7 +16,7 @@
         </a>
       </li>
       {%endfor%}
-      {%for i in range(4)%}
+      {%for i in range(8)%}
       <li class="card">
         <a class="center-content" href="/strumenti/batterie/{{i + 1}}">
           <h3 class="card-title"> Batteria  {{i + 1}}</h3>
@@ -26,7 +27,7 @@
         </a>
       </li>
       {%endfor%}
-      {%for i in range(4)%}
+      {%for i in range(5)%}
       <li class="card">
         <a class="center-content" href="/strumenti/bassi/{{i + 1}}">
           <h3 class="card-title"> Basso  {{i + 1}}</h3>
@@ -41,13 +42,15 @@
       
     </ul>
   {%endblock%}
+</section>
 
+<section class="mb-3">
   {%block concerti_list%}
-    <h2>CONCERTI:</h2>
+    <h2 class="text-center">CONCERTI:</h2>
 
-    <ul class="d-flex justify-between no-list-style">
+    <ul class="d-flex justify-start no-list-style">
       
-      {%for i in range(12)%}
+      {%for i in range(6)%}
       <li class="card">
         <a class="center-content" href="/concerti/{{i + 1}}">
           <h3 class="card-title"> Concerto  {{i + 1}}</h3>

@@ -7,6 +7,7 @@
 :root{
   --primary-black:rgb(26,26,26);
 }
+
 html{
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -25,11 +26,12 @@ body a{
 
 main{
   height: calc(100vh - 95px);
-  margin-top: 80px;
+  margin-top: 100px;
   overflow-y:scroll; 
   overflow-x: hidden; 
 }
 
+/* header */
 header{
   background-color: rgb(255, 255, 255);
   min-height: 70px;
@@ -48,6 +50,7 @@ header > nav li:hover{
   border-bottom: 3px solid var(--primary-black);
 }
 
+/* footer */
 footer{
   background-color: rgb(255, 255, 255);
   min-height: 25px;
@@ -56,6 +59,51 @@ footer{
   z-index: 20;
   bottom: 0;
   left: 0;
+}
+/* form */
+form{
+  margin: auto;
+  margin-top: 60px;
+  border: 1px solid #111115;
+  border-radius: 10px;
+  box-shadow: 5px 3px rgb(10, 10, 12);
+  width: 600px;
+  height: 300px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form input{
+  width: 200px;
+  margin: 10px 0;
+  padding: 7px;
+  border:none;
+  border-bottom: 1px solid var(--primary-black)
+}
+
+form button{
+  margin-top: 30px;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100px;
+  border: none;
+  background-color: #fcfcfc;
+  box-shadow: 4px 3px #adadad;
+}
+
+form button:hover{
+  background-color: #f3f3f3;
+  transform: scale(1.1);
+  transition: transform 0.2s ease-out;
+}
+
+form button:active{
+  background-color: #ffffff;
+  transform: scale(.9);
+  transition: transform 0.1s ease-out;
 }
 
 /* Utilities */
@@ -70,6 +118,9 @@ footer{
 
 .justify-around{
   justify-content: space-around;
+}
+.justify-start{
+  justify-content:start;
 }
 
 .align-center{
@@ -119,6 +170,24 @@ footer{
 }
 
 /* paddings */
+.p-1{
+  padding: 10px;
+}
+.p-2{
+  padding: 20px;
+}
+.p-3{
+  padding: 30px;
+}
+.p-4{
+  padding: 40px;
+}
+.p-5{
+  padding: 50px;
+}
+.p-6{
+  padding: 60px;
+}
 .pb-1{
   padding-bottom: 10px;
 }
@@ -195,14 +264,21 @@ footer{
   width: calc((100% / 4) - 50px);
   min-height: 250px;
   min-width: 250px;
-  margin: 40px 5px;
+  margin: 40px 25px;
   padding: 8px;
   background-color: rgb(255, 255, 255);
-  transition: transform 0.3s ease-out;
 }
 
 .card:hover{
   transform: scale(1.1);
+  rotate: 3deg;
+  transition: transform  0.3s ease-out, rotate 0.3s ease-out;
+  z-index: 20;
+}
+
+.card:active{
+  transform: scale(0.9);
+  transition: transform 0.1s ease-out;
   z-index: 20;
 }
 
