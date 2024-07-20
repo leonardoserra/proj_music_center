@@ -4,6 +4,59 @@
   padding:0;
   box-sizing: border-box;
 }
+:root{
+  --primary-black:rgb(26,26,26);
+}
+html{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+body{
+  position: relative;
+  color: var(--primary-black);
+}
+
+body a{
+  text-decoration: none;
+  color: var(--primary-black);
+}
+
+main{
+  height: calc(100vh - 95px);
+  margin-top: 80px;
+  overflow-y:scroll; 
+  overflow-x: hidden; 
+}
+
+header{
+  background-color: rgb(255, 255, 255);
+  min-height: 70px;
+  width: 100%;
+  position: fixed;
+  z-index: 30;
+  top: 0;
+  left: 0;
+}
+
+header > nav{
+  width: 700px;
+}
+
+header > nav li:hover{
+  border-bottom: 3px solid var(--primary-black);
+}
+
+footer{
+  background-color: rgb(255, 255, 255);
+  min-height: 25px;
+  width: 100%;
+  position: fixed;
+  z-index: 20;
+  bottom: 0;
+  left: 0;
+}
 
 /* Utilities */
 .d-flex{
@@ -24,6 +77,9 @@
 }
 
 /* margins */
+.m-auto{
+  margin: auto;
+}
 .mb-1{
   margin-bottom: 10px;
 }
@@ -147,7 +203,7 @@
 
 .card:hover{
   transform: scale(1.1);
-  z-index: 10;
+  z-index: 20;
 }
 
 .card-show{
@@ -165,7 +221,7 @@
 }
 .card-title{
   font-weight: 600;
-  color: rgb(26, 26, 26);
+  color: var(--primary-black);
 }
 
 /* card image */
@@ -184,5 +240,5 @@
 }
 
 .card-price{
-  font-size: 18px;
+  font-size: 16px;
 }
