@@ -12,7 +12,7 @@ def start_app():
         return f'''<div style="margin:200px auto; text-align:center;">
                       <h1>LOGIN EFFETTUATO!</h1>
                       <p style="margin-bottom:35px">username: {username}</p>
-                      <a style="text-decoration:none; color:#111115; padding: 10px; border: 1px solid black;" href="/home">TORNA ALLA HOME</a>
+                      <a style="text-decoration:none; color:#1a1a1a; padding: 10px; border: 1px solid black;" href="/home">TORNA ALLA HOME</a>
                   </div>
                 '''
 

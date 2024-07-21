@@ -1,7 +1,16 @@
 {%extends 'base.html'%}
 {%block mainblock%}
+
+{%block welcome_home_block%}
+<section id="welcome-home-hero" class="m-auto mt-3 text-center music-centre-border">
+  <h1 class="mt-4 mb-2">Benvenut* da MUSIC CENTRE</h1>
+  <p class="mb-1">Qui puoi trovare molti strumenti musicali, con la loro descrizione e prezzo.</p>
+  <p class="mb-4">Inoltre spesso si svolgono dei concerti qui allo store e nella sezione "CONCERTI" puoi trovare gli ultimi spettacoli in arrivo con prezzo del biglietto e descrizione.</p>
+</section>
+{%endblock%}
+
+{%block strumenti_list%}
 <section class="mb-3 mt-3">
-  {%block strumenti_list%}
 
     <h2 class="text-center">STRUMENTI:</h2>
     <ul class="d-flex justify-start no-list-style">
@@ -41,11 +50,11 @@
 
       
     </ul>
-  {%endblock%}
-</section>
+  </section>
+{%endblock%}
 
-<section class="mb-3">
-  {%block concerti_list%}
+{%block concerti_list%}
+<section class="mt-3 mb-3">
     <h2 class="text-center">CONCERTI:</h2>
 
     <ul class="d-flex justify-start no-list-style">

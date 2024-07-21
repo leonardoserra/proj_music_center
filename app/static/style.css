@@ -5,7 +5,17 @@
   box-sizing: border-box;
 }
 :root{
-  --primary-black:rgb(26,26,26);
+  --background-main: #f2f2f2;
+  --background-header: #c10b18;
+  --background-footer: #c10b18;
+  --text-header: #ffffff;
+  --text-footer: #ffffff;
+  --primary-black:#333333;
+  --primary-white:#fefefe;
+  --link-color:#9cfcff;
+  --button-primary: #fcfcfc;
+  --button-hover: #f3f3f3;
+  --button-active: #ffffff;
 }
 
 html{
@@ -22,19 +32,21 @@ body{
 
 body a{
   text-decoration: none;
-  color: var(--primary-black);
+  color: var(--link-color);
 }
 
 main{
+  background-color: var(--background-main);
   height: calc(100vh - 95px);
-  margin-top: 100px;
+  margin-top: 95px;
   overflow-y:scroll; 
   overflow-x: hidden; 
 }
 
 /* header */
 header{
-  background-color: rgb(255, 255, 255);
+  background-color: var(--background-header);
+  color:var(--text-header);
   min-height: 70px;
   width: 100%;
   position: fixed;
@@ -47,13 +59,32 @@ header > nav{
   width: 700px;
 }
 
-header > nav li:hover{
-  border-bottom: 3px solid var(--primary-black);
+header > nav li a{
+  position: relative;
+}
+/* header > nav li:hover{
+  border-bottom: 3px solid var(--link-color);
+} */
+
+header > nav li a::after{
+  content:' ';
+  position: absolute;
+  bottom: 0;  
+  left: 0;
+  height: 2px;
+  width: 0px;
+  background-color: var(--link-color);
+}
+
+header > nav li a:hover::after{
+  transition: width .3s ease-out;
+  width: 100%;
 }
 
 /* footer */
 footer{
-  background-color: rgb(255, 255, 255);
+  background-color: var(--background-footer);
+  color:var(--text-header);
   min-height: 25px;
   width: 100%;
   position: fixed;
@@ -61,6 +92,7 @@ footer{
   bottom: 0;
   left: 0;
 }
+
 /* form */
 form{
   margin: auto;
@@ -85,24 +117,25 @@ form input{
   border-bottom: 1px solid var(--primary-black)
 }
 
+
 form button{
   margin-top: 30px;
   border-radius: 10px;
   padding: 10px;
   width: 100px;
   border: none;
-  background-color: #fcfcfc;
+  background-color:var(--button-primary);
   box-shadow: 4px 3px #adadad;
 }
 
 form button:hover{
-  background-color: #f3f3f3;
+  background-color: var(--button-hover);
   transform: scale(1.1);
   transition: transform 0.2s ease-out;
 }
 
 form button:active{
-  background-color: #ffffff;
+  background-color:var(--button-active);
   transform: scale(.9);
   transition: transform 0.1s ease-out;
 }
@@ -111,18 +144,23 @@ form button:active{
 
 /* components style */
 
+#welcome-home-hero{
+  background-color: var(--primary-white);
+  width: 800px;
+}
+
 /* single card */
 .card{
   border: 1px solid #111115;
   border-radius: 10px;
   box-shadow: 5px 5px #0a0a0c;
+  padding: 8px;
   height: calc((100vw / 4) - 50px);
   width: calc((100% / 4) - 50px);
   min-height: 250px;
   min-width: 250px;
   margin: 40px 25px;
-  padding: 8px;
-  background-color: #ffffff;
+  background-color: var(--primary-white);
 }
 
 .card:hover{
@@ -139,10 +177,11 @@ form button:active{
 }
 
 .card-show{
-  max-width: 800px;
+  max-width: 1200px;
+  width: 1200px;
   min-height: 500px;
   min-width: 500px;
-  margin: 50px 0 100px 0;
+  margin: 80px 0 100px 0;
   padding: 12px;
 }
 
@@ -171,12 +210,48 @@ form button:active{
   height:100%;
 }
 
-.card-price{
+.card-info{
+  padding-left: 20px;
+  min-width: calc(100% / 2 - 10px);
+  min-height: calc(100% / 2 - 10px);
+  background-color: var(--primary-white);
+}
+.card-detail-image-wrapper{
+  max-width: calc(100% / 2 - 10px);
+  max-height: calc(100% / 2 - 10px);
+  min-width: 100px;
+  min-height: 100px;
+  margin: 5px 5px
+}
+.card-detail-price, .card-detail-title, .card-detail-description{
+  text-align: start;
+}
+
+.card-detail-title{
+  height: 10%;
+}
+
+.card-detail-description{
+  height: 80%;
+}
+
+.card-detail-price{
+  height: 10%;
+}
+
+.card-price, .card-detail-price{
   font-size: 16px;
 }
 
 
 /* Utilities */
+
+.music-centre-border{
+  border: 1px solid #111115;
+  border-radius: 10px;
+  box-shadow: 5px 5px #0a0a0c;
+}
+
 .d-flex{
   display: flex;
   flex-wrap: wrap;
@@ -189,6 +264,7 @@ form button:active{
 .justify-around{
   justify-content: space-around;
 }
+
 .justify-start{
   justify-content:start;
 }
