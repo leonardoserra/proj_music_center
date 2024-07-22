@@ -1,9 +1,12 @@
 # Questa è un app per gestire un negozio di musica
 ## Avrà entita: 
 ```py
-Prodotto(id:int, nome:str, prezzo:float, tipo:object|str):class 
-Concerto(nome:str, data:object, prezzo:float, gruppi:list[Gruppo]):class
-Gruppo(nome:str,membri:list[Persona]):class
+User(id:int, username:str, password:str)
+Instrument(id:int, name:str, price:float, type:str):class 
+Concert(id:int, name:str, date:object, price:float):class
+contert_group(id_concerto, id_gruppo) #tabella relazione
+Group(id:int, name:str, group_members:list[Person]):class
+Person(id:int, name:str, surname:str, instrument:str, group_id:int):class
 ```
 ## db:
 tabella prodotti
