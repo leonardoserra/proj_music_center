@@ -1,78 +1,78 @@
 {%extends 'base.html'%}
 {%block mainblock%}
 
-{%block welcome_home_block%}
-<section id="welcome-home-hero" class="m-auto mt-3 text-center music-centre-border">
-  <h1 class="mt-4 mb-2">Benvenut* da MUSIC CENTRE</h1>
-  <p class="mb-1">Qui puoi trovare molti strumenti musicali, con la loro descrizione e prezzo.</p>
-  <p class="mb-4">Inoltre spesso si svolgono dei concerti qui allo store e nella sezione "CONCERTI" puoi trovare gli ultimi spettacoli in arrivo con prezzo del biglietto e descrizione.</p>
-</section>
-{%endblock%}
-
-{%block strumenti_list%}
-<section class="mb-3 mt-3">
-
-    <h2 class="text-center">STRUMENTI:</h2>
-    <ul class="d-flex justify-start no-list-style">
-      {%for i in range(7)%}
-      <li class="card">
-        <a class="center-content" href="/strumenti/chitarre/{{i + 1}}">
-          <h3 class="card-title"> Chitarra {{i + 1}}</h3>
-          <div class="card-image-wrapper">
-            <img class="card-image" src="/static/default.jpg" alt="Chitarra {{i + 1}}">
-          </div>
-          <p class="card-price italic">Prezzo: <span class="semibold">200.00€</span></p>
-        </a>
-      </li>
-      {%endfor%}
-      {%for i in range(8)%}
-      <li class="card">
-        <a class="center-content" href="/strumenti/batterie/{{i + 1}}">
-          <h3 class="card-title"> Batteria  {{i + 1}}</h3>
-          <div class="card-image-wrapper">
-            <img class="card-image" src="/static/default.jpg" alt="Batteria {{i + 1}}">
-          </div>
-          <p class="card-price italic">Prezzo: <span class="semibold">200.00€</span></p>
-        </a>
-      </li>
-      {%endfor%}
-      {%for i in range(5)%}
-      <li class="card">
-        <a class="center-content" href="/strumenti/bassi/{{i + 1}}">
-          <h3 class="card-title"> Basso  {{i + 1}}</h3>
-          <div class="card-image-wrapper">
-            <img class="card-image" src="/static/default.jpg" alt="Basso {{i + 1}}">
-          </div>
-          <p class="card-price italic">Prezzo: <span class="semibold">200.00€</span></p>
-        </a>
-      </li>
-      {%endfor%}
-
-      
-    </ul>
+  {%block welcome_home_block%}
+  <section id="welcome-home-hero" class="m-auto mt-3 text-center music-centre-border">
+    <h1 class="mt-4 mb-2">Benvenut* da MUSIC CENTRE</h1>
+    <p class="mb-1">Qui puoi trovare molti strumenti musicali, con la loro descrizione e prezzo.</p>
+    <p class="mb-4">Inoltre spesso si svolgono dei concerti qui allo store e nella sezione "CONCERTI" puoi trovare gli ultimi spettacoli in arrivo con prezzo del biglietto e descrizione.</p>
   </section>
-{%endblock%}
-
-{%block concerti_list%}
-<section class="mt-3 mb-3">
-    <h2 class="text-center">CONCERTI:</h2>
-
-    <ul class="d-flex justify-start no-list-style">
-      
-      {%for i in range(6)%}
-      <li class="card">
-        <a class="center-content" href="/concerti/{{i + 1}}">
-          <h3 class="card-title"> Concerto  {{i + 1}}</h3>
-          <div class="card-image-wrapper">
-            <img class="card-image" src="/static/default.jpg" alt="Concerto {{i + 1}}">
-          </div>
-          <p class="card-price italic">Prezzo: <span class="semibold">200.00€</span></p>
-        </a>
-      </li>
-      {%endfor%}
-      
-    </ul>
   {%endblock%}
 
-</section>
+  {%block strumenti_list%}
+  <section class="mb-3 mt-3">
+
+      <h2 class="text-center">STRUMENTI:</h2>
+      <ul class="d-flex justify-start no-list-style">
+        {%for i in range(7)%}
+        <li class="card">
+          <a class="center-content" href="/strumenti/chitarre/{{i + 1}}">
+            <h3 class="card-title"> Chitarra {{i + 1}}</h3>
+            <div class="card-image-wrapper">
+              <img class="card-image" src="/static/default.jpg" alt="Chitarra {{i + 1}}">
+            </div>
+            <p class="card-price italic">Prezzo: <span class="semibold">200.00€</span></p>
+          </a>
+        </li>
+        {%endfor%}
+        {%for i in range(8)%}
+        <li class="card">
+          <a class="center-content" href="/strumenti/batterie/{{i + 1}}">
+            <h3 class="card-title"> Batteria  {{i + 1}}</h3>
+            <div class="card-image-wrapper">
+              <img class="card-image" src="/static/default.jpg" alt="Batteria {{i + 1}}">
+            </div>
+            <p class="card-price italic">Prezzo: <span class="semibold">200.00€</span></p>
+          </a>
+        </li>
+        {%endfor%}
+        {%for i in range(5)%}
+        <li class="card">
+          <a class="center-content" href="/strumenti/bassi/{{i + 1}}">
+            <h3 class="card-title"> Basso  {{i + 1}}</h3>
+            <div class="card-image-wrapper">
+              <img class="card-image" src="/static/default.jpg" alt="Basso {{i + 1}}">
+            </div>
+            <p class="card-price italic">Prezzo: <span class="semibold">200.00€</span></p>
+          </a>
+        </li>
+        {%endfor%}
+
+        
+      </ul>
+    </section>
+  {%endblock%}
+
+  {%block concerti_list%}
+  <section class="mt-3 mb-3">
+      <h2 class="text-center">CONCERTI:</h2>
+
+      <ul class="d-flex justify-start no-list-style">
+        
+        {%for i in range(6)%}
+        <li class="card">
+          <a class="center-content" href="/concerti/{{i + 1}}">
+            <h3 class="card-title"> Concerto  {{i + 1}}</h3>
+            <div class="card-image-wrapper">
+              <img class="card-image" src="/static/default.jpg" alt="Concerto {{i + 1}}">
+            </div>
+            <p class="card-price italic">Prezzo: <span class="semibold">200.00€</span></p>
+          </a>
+        </li>
+        {%endfor%}
+        
+      </ul>
+    </section>
+  {%endblock%}
+
 {%endblock%}

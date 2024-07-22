@@ -8,6 +8,8 @@
   --background-main: #f2f2f2;
   --background-header: #c10b18;
   --background-footer: #c10b18;
+  --background-form: #ffffff;
+  --price-text: #e7111f;
   --text-header: #ffffff;
   --text-footer: #ffffff;
   --primary-black:#333333;
@@ -69,7 +71,7 @@ header > nav li a{
 header > nav li a::after{
   content:' ';
   position: absolute;
-  bottom: 0;  
+  bottom: -3px;  
   left: 0;
   height: 2px;
   width: 0px;
@@ -83,8 +85,8 @@ header > nav li a:hover::after{
 
 /* footer */
 footer{
-  background-color: var(--background-footer);
-  color:var(--text-header);
+  background-color: var(--background-form);
+  color:var(--text-footer);
   min-height: 25px;
   width: 100%;
   position: fixed;
@@ -100,6 +102,7 @@ form{
   border: 1px solid #111115;
   border-radius: 10px;
   box-shadow: 5px 3px rgb(10, 10, 12);
+  background-color: var(--text-footer);
   width: 600px;
   height: 300px;
   padding: 30px;
@@ -131,13 +134,16 @@ form button{
 form button:hover{
   background-color: var(--button-hover);
   transform: scale(1.1);
-  transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, box-shadow 0.5s ease-in-out;
+  box-shadow: -4px 3px #adadad;
+
 }
 
 form button:active{
   background-color:var(--button-active);
   transform: scale(.9);
-  transition: transform 0.1s ease-out;
+  box-shadow: -4px -3px #adadad;
+  transition: transform 0.1s ease-out, box-shadow 0.5s ease-in-out;
 }
 
 
@@ -241,6 +247,7 @@ form button:active{
 
 .card-price, .card-detail-price{
   font-size: 16px;
+  color: var(--price-text);
 }
 
 
