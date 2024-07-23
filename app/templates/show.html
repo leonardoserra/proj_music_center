@@ -2,17 +2,24 @@
 {%block mainblock%}
   {# qui mostriamo la card singola per ogni entità #}
   <article class="center-content text-center">
+    {%if item%}
     <div class="card-show d-flex justify-between">
 
       <div class="card-detail-image-wrapper">
-        <img class="card-image" src="/static/default.jpg" alt="{{item_name}}"/>
+        {%if item.name%}
+        <img class="card-image" src="/static/images/{{item.image_url}}" alt="{{item.name}}"/>
+        {%endif%}
+        {%if item.title%}
+        <img class="card-image" src="/static/images/{{item.image_url}}" alt="{{item.title}}"/>
+        {%endif%}
       </div>
 
       <div class="card-info">
-        <h1 class="card-detail-title">{{item_name}}</h1>
-        <p class="card-detail-description">{{item_content}}</p>
-        <p class="card-detail-price italic">Prezzo: <span class="semibold">200.00€</span></p>
+        <h1 class="card-detail-title">{{item.name}}</h1>
+        <p class="card-detail-description">{{item.description}}</p>
+        <p class="card-detail-price italic">Prezzo: <span class="semibold">{{item.price}}€</span></p>
       </div>
     </div>
+    {%endif%}
   </article>
 {%endblock%}

@@ -1,17 +1,19 @@
 {%extends 'base.html'%}
 {%block mainblock%}
   <h2 class="text-center mt-3">BASSI:</h2>
+  {%if basses%}
   <ul class="d-flex justify-start no-list-style">
-    {%for i in range(24)%}
-      <li class="card">
-        <a class="center-content" href="/strumenti/bassi/{{i + 1}}">
-          <h3 class="card-title"> Basso {{i + 1}}</h3>
-          <div class="card-image-wrapper">
-            <img class="card-image" src="/static/default.jpg" alt="Basso {{i + 1}}">
-          </div>
-          <p class="card-price italic">Prezzo: <span class="semibold">200.00€</span></p>
-        </a>
-      </li>
-    {%endfor%}
+  {%for b in basses%}
+    <li class="card">
+      <a class="center-content" href="/strumenti/chitarre/{{b.id}}">
+        <h3 class="card-title"> {{b.name}}</h3>
+        <div class="card-image-wrapper">
+          <img class="card-image" src="/static/images/{{b.image_url}}" alt="{{b.name}}">
+        </div>
+        <p class="card-price italic">Prezzo: <span class="semibold">{{b.price}}€</span></p>
+      </a>
+    </li>
+  {%endfor%}
   </ul>
+  {%endif%}
 {%endblock%}

@@ -6,9 +6,9 @@
   {%- endmacro%}
 
   <form action="/login" method="post">
-    
     {{input('username')}}
     {{input('password', type='password')}}
     <button type="submit">Accedi</button>
   </form>
+  <p class="text-center mt-2 error-message"> {{message}}</p>
 {%endblock%}

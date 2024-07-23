@@ -13,65 +13,42 @@
   <section class="mb-3 mt-3">
 
       <h2 class="text-center">STRUMENTI:</h2>
+      {%if instruments%}
       <ul class="d-flex justify-start no-list-style">
-        {%for i in range(7)%}
+        {%for i in instruments%}
         <li class="card">
-          <a class="center-content" href="/strumenti/chitarre/{{i + 1}}">
-            <h3 class="card-title"> Chitarra {{i + 1}}</h3>
+          <a class="center-content" href="/strumenti/chitarre/{{i.id}}">
+            <h3 class="card-title"> {{i.name}}</h3>
             <div class="card-image-wrapper">
-              <img class="card-image" src="/static/default.jpg" alt="Chitarra {{i + 1}}">
+              <img class="card-image" src="/static/images/{{i.image_url}}" alt="{{i.image_url}}">
             </div>
-            <p class="card-price italic">Prezzo: <span class="semibold">200.00€</span></p>
+            <p class="card-price italic">Prezzo: <span class="semibold">{{i.price}}€</span></p>
           </a>
         </li>
         {%endfor%}
-        {%for i in range(8)%}
-        <li class="card">
-          <a class="center-content" href="/strumenti/batterie/{{i + 1}}">
-            <h3 class="card-title"> Batteria  {{i + 1}}</h3>
-            <div class="card-image-wrapper">
-              <img class="card-image" src="/static/default.jpg" alt="Batteria {{i + 1}}">
-            </div>
-            <p class="card-price italic">Prezzo: <span class="semibold">200.00€</span></p>
-          </a>
-        </li>
-        {%endfor%}
-        {%for i in range(5)%}
-        <li class="card">
-          <a class="center-content" href="/strumenti/bassi/{{i + 1}}">
-            <h3 class="card-title"> Basso  {{i + 1}}</h3>
-            <div class="card-image-wrapper">
-              <img class="card-image" src="/static/default.jpg" alt="Basso {{i + 1}}">
-            </div>
-            <p class="card-price italic">Prezzo: <span class="semibold">200.00€</span></p>
-          </a>
-        </li>
-        {%endfor%}
-
-        
       </ul>
+      {%endif%}
     </section>
   {%endblock%}
 
   {%block concerti_list%}
   <section class="mt-3 mb-3">
       <h2 class="text-center">CONCERTI:</h2>
-
+      {%if concerts%}
       <ul class="d-flex justify-start no-list-style">
-        
-        {%for i in range(6)%}
+        {%for c in concerts%}
         <li class="card">
-          <a class="center-content" href="/concerti/{{i + 1}}">
-            <h3 class="card-title"> Concerto  {{i + 1}}</h3>
+          <a class="center-content" href="/concerti/{{c.id}}">
+            <h3 class="card-title"> {{c.title}}</h3>
             <div class="card-image-wrapper">
-              <img class="card-image" src="/static/default.jpg" alt="Concerto {{i + 1}}">
+              <img class="card-image" src="/static/images/{{c.image_url}}" alt="{{c.title}}">
             </div>
-            <p class="card-price italic">Prezzo: <span class="semibold">200.00€</span></p>
+            <p class="card-price italic">Prezzo: <span class="semibold">{{c.price}}€</span></p>
           </a>
         </li>
         {%endfor%}
-        
       </ul>
+      {%endif%}
     </section>
   {%endblock%}
 

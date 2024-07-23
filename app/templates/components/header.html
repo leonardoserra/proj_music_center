@@ -9,7 +9,15 @@
       <li><a class="no-text-decoration" href="/strumenti/chitarre">CHITARRE</a></li>
       <li><a class="no-text-decoration" href="/strumenti/batterie">BATTERIE</a></li>
       <li><a class="no-text-decoration" href="/strumenti/bassi">BASSI</a></li>
-      <li><a class="no-text-decoration" href="/login">ACCEDI</a></li>
+      {%if session.username%}
+        <li><a class="no-text-decoration" href="/logout">User: {{session.username}} | LOGOUT</a></li>
+      {%else%}
+        <li><a class="no-text-decoration" href="/login">ACCEDI</a></li>
+      {%endif%}
+      {%if session.username == 'admin'%}
+      <li><a class="no-text-decoration" href="/create-instrument"> Aggiungi Strumento</a></li>
+      <li><a class="no-text-decoration" href="/create-concert"> Aggiungi Concerto</a></li>
+      {%endif%}
     </ul>
   </nav>
 </header>
