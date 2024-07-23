@@ -1,10 +1,17 @@
 {%extends 'base.html'%}
 {%block mainblock%}
   {# qui mostriamo la card singola per ogni entità #}
-  <article class="center-content text-center">
-    {%if item%}
+  <article class="center-content text-center pos-relative">
+  {%if item%}
+    {%if 'username' in session and session.username == 'admin'%}
+      {%if item.product_type %}
+      <form class="delete-button" action="/delete-instrument/{{item.id}}" method="post"><button type="submit">Elimina Strumento</button></form>
+      {%endif%}
+      {%if item.date %}
+      <form class="delete-button" action="/delete-concert/{{item.id}}" method="post"><button type="submit">Elimina Concerto</button></form>
+      {%endif%}
+    {%endif%}
     <div class="card-show d-flex justify-between">
-
       <div class="card-detail-image-wrapper">
         {%if item.name%}
         <img class="card-image" src="/static/images/{{item.image_url}}" alt="{{item.name}}"/>
@@ -15,7 +22,15 @@
       </div>
 
       <div class="card-info">
+        {%if item.date%}
+        <h2 class="card-detail-date">{{item.date.strftime('%d %B %Y')}}</h2>
+        {%endif%}
+        {%if item.name%}
         <h1 class="card-detail-title">{{item.name}}</h1>
+        {%endif%}
+        {%if item.title%}
+        <h1 class="card-detail-title">{{item.title}}</h1>
+        {%endif%}
         <p class="card-detail-description">{{item.description}}</p>
         <p class="card-detail-price italic">Prezzo: <span class="semibold">{{item.price}}€</span></p>
       </div>

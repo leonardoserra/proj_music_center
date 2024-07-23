@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+{%block mainblock%}
+  {#this macro generates an input tag#}
+  {%macro input(name, value='', type='text', size=20, step="1") -%}
+    <input placeholder="{{name}}" type="{{type}}" name="{{name}}", value="{{value|e}}" size="{{size}}" step="{{step}}">
+  {%- endmacro%}
+
+  <form action="" method="post" enctype="multipart/form-data">
+    <input type="text" name="name" id="name" placeholder="{{item.name}}">
+    <textarea placeholder="{{item.description}}" name="description"></textarea>
+    {{input('price', type='number', step="0.01")}}
+
+    <select name="product_type" id="product_type" value="{{item.product_type}}">
+      <option value="0">Scegli il tipo di strumento</option>
+      <option value="guitar">Chitarra</option>
+      <option value="drums">Batteria</option>
+      <option value="bass">Basso</option>
+    </select>
+    <input type="file" name="image" id="image">
+    <button type="submit">Salva</button>
+  </form>
+  <p class="text-center mt-2 error-message"> {{message}}</p>
+{%endblock%}

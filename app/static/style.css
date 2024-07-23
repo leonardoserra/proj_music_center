@@ -4,6 +4,7 @@
   padding:0;
   box-sizing: border-box;
 }
+
 :root{
   --background-main: #f2f2f2;
   --background-header: #c10b18;
@@ -19,6 +20,7 @@
   --button-hover: #f3f3f3;
   --button-active: #ffffff;
   --error-message:#ff1616;
+  --box-shadow:#adadad;
 }
 
 html{
@@ -113,14 +115,28 @@ form{
   align-items: center;
 }
 
+form.delete-button{
+  position: absolute;
+  top:70px;
+  left:20px;
+  margin: 0;
+  margin-top: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 0 transparent;
+  background-color: transparent;
+  width: 100px;
+  min-height:10px;
+  padding:0;
+}
+
 form input{
   width: 200px;
   margin: 10px 0;
   padding: 7px;
-  border:none;
+  border: none;
   border-bottom: 1px solid var(--primary-black)
 }
-
 
 form button{
   margin-top: 30px;
@@ -132,22 +148,20 @@ form button{
   box-shadow: 4px 3px #adadad;
 }
 
-form button:hover{
+form button:hover, form.delete-button button:hover{
   background-color: var(--button-hover);
   transform: scale(1.1);
   transition: transform 0.2s ease-out, box-shadow 0.5s ease-in-out;
-  box-shadow: -4px 3px #adadad;
+  box-shadow: -4px 3px var(--box-shadow);
 
 }
 
-form button:active{
+form button:active,  form.delete-button button:active{
   background-color:var(--button-active);
   transform: scale(.9);
-  box-shadow: -4px -3px #adadad;
+  box-shadow: -4px -3px var(--box-shadow);
   transition: transform 0.1s ease-out, box-shadow 0.5s ease-in-out;
 }
-
-
 
 /* components style */
 
@@ -197,18 +211,19 @@ form button:active{
   text-decoration: none;
 
 }
+
 .card-title{
+  margin-bottom: 10px;
   font-weight: 600;
   color: var(--primary-black);
 }
 
 /* card image */
 .card-image-wrapper{
-  max-width: calc(100% - 50px);
+  width: calc(100% - 50px);
   max-height: calc(100% - 50px);
   min-width: 100px;
   min-height: 100px;
-  margin: 5px 5px
 }
 
 .card-image{
@@ -219,17 +234,18 @@ form button:active{
 
 .card-info{
   padding-left: 20px;
-  min-width: calc(100% / 2 - 10px);
+  width: calc(100% / 2 - 10px);
   min-height: calc(100% / 2 - 10px);
   background-color: var(--primary-white);
 }
+
 .card-detail-image-wrapper{
-  max-width: calc(100% / 2 - 10px);
+  width: calc(100% / 2 - 10px);
   max-height: calc(100% / 2 - 10px);
   min-width: 100px;
   min-height: 100px;
-  margin: 5px 5px
 }
+
 .card-detail-price, .card-detail-title, .card-detail-description{
   text-align: start;
 }
@@ -250,7 +266,6 @@ form button:active{
   font-size: 16px;
   color: var(--price-text);
 }
-
 
 /* Utilities */
 
@@ -402,8 +417,13 @@ form button:active{
 
 .center-content{
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
+}
+
+.pos-relative{
+  position: relative;
 }
 
 .error-message{
